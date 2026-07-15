@@ -8,6 +8,7 @@ class QurbanType extends Model
 {
     protected $fillable = [
         'name',
+        'price',
         'active',
     ];
 

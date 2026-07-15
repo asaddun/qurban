@@ -14,6 +14,7 @@ class Participant extends Model
         'dist_cow',
         'dist_goat',
         'notes',
+        'total_amount',
     ];
 
     public function shohibulQurbans()
