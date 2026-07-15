@@ -24,6 +24,8 @@ return new class extends Migration
 
             $table->string('notes')->nullable();
 
+            $table->unsignedBigInteger('total_amount')->default(0);
+            $table->unsignedBigInteger('paid_amount')->default(0);
             $table->enum('payment_status', [
                 'pending',
                 'paid',

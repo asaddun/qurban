@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('name');
+            $table->unsignedBigInteger('price')->default(0);
             $table->boolean('active')->default(true);
 
             $table->timestamps();
