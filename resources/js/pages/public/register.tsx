@@ -142,6 +142,12 @@ export default function Register({ qurbanTypes }: Props) {
                             <Row gutter={16}>
                                 <Col xs={24} md={12}>
                                     <Form.Item
+                                        name={['participant', 'id']}
+                                        hidden
+                                    >
+                                        <Input />
+                                    </Form.Item>
+                                    <Form.Item
                                         label="Nama"
                                         name={['participant', 'name']}
                                         rules={[

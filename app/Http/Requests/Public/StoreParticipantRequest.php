@@ -27,6 +27,12 @@ class StoreParticipantRequest extends FormRequest
             // Participant
             'participant' => ['required', 'array'],
 
+            'participant.id' => [
+                'nullable',
+                'integer',
+                'exists:participants,id'
+            ],
+
             'participant.name' => [
                 'required',
                 'string',
@@ -40,8 +46,9 @@ class StoreParticipantRequest extends FormRequest
             ],
 
             'participant.address' => [
-                'sometimes',
+                'nullable',
                 'string',
+                'max:500',
             ],
 
             'participant.request_part' => [

@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Helpers\Phone;
 use App\Models\Participant;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\ValidationException;
 
 class ParticipantService
 {
@@ -40,16 +41,22 @@ class ParticipantService
     }
 
     public function addShohibuls(
-        int $participantId,
+        array $participantData,
         array $shohibuls
     ): Participant {
         return DB::transaction(function () use (
-            $participantId,
+            $participantData,
             $shohibuls
         ) {
 
             $participant = Participant::query()
-                ->findOrFail($participantId);
+                ->findOrFail($participantData['id']);
+
+            if ($participant->phone !== $participantData['phone']) {
+                throw ValidationException::withMessages([
+                    'participant.phone' => 'Data participant tidak sesuai.',
+                ]);
+            }
 
             $this->createShohibuls(
                 $participant,
