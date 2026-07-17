@@ -1,3 +1,44 @@
+# Project Rules
+
+This project is a Qurban registration system.
+
+## Stack
+
+- Laravel 13
+- Inertia React
+- TypeScript
+- Ant Design
+- Tailwind CSS
+
+## Backend Rules
+
+- Keep controllers thin.
+- Put business logic into Service classes.
+- Use Form Request validation.
+- Prefer Eloquent over Query Builder.
+
+## Frontend Rules
+
+- Use Ant Design components whenever possible.
+- Use Tailwind only for layout and spacing.
+- Do not create duplicate UI components.
+
+## Routing
+
+- Always use Laravel Wayfinder.
+- Never hardcode URLs.
+
+## Business Rules
+
+- Phone number is the unique identifier of Participant.
+- Normalize phone number to 08xxxxxxxxxx.
+- Existing Participant data must not be modified during registration.
+- One Participant may have multiple Shohibul Qurban.
+
+## Testing
+
+- New backend features should include Pest Feature Tests.
+
 <laravel-boost-guidelines>
 === foundation rules ===
 
@@ -96,7 +137,7 @@ This project has domain-specific skills available in `**/skills/**`. You MUST ac
 
 - Execute PHP in app context for debugging and testing code. Do not create models without user approval, prefer tests with factories instead. Prefer existing Artisan commands over custom tinker code.
 - Always use single quotes to prevent shell expansion: `php artisan tinker --execute 'Your::code();'`
-  - Double quotes for PHP strings inside: `php artisan tinker --execute 'User::where("active", true)->count();'`
+    - Double quotes for PHP strings inside: `php artisan tinker --execute 'User::where("active", true)->count();'`
 
 === php rules ===
 
