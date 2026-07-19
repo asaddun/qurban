@@ -46,7 +46,7 @@ class ParticipantController extends Controller
                 'price',
             ]);
 
-        return Inertia::render('public/register', [
+        return Inertia::render('public/Register', [
             'qurbanTypes' => $qurbanTypes,
         ]);
     }
